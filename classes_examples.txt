@@ -1,0 +1,19 @@
+Library Management System
+--------------------------
+-Book: title author category vol publication publish_date 
+	entry_date block/section details
+-Student: 
+-Staff:
+-Borrow: student book staff date_of_issue date_of_return remarks status
+
+Online Food Order
+-----------------
+-Restaurant
+-Food
+-Customer
+-Rider
+-Admin
+-Order: food customer date_time address mobile 
+-RiderOrder: order rider 
+-Payment: 
+

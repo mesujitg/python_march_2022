@@ -93,3 +93,39 @@ class Course:
 
 # Institute, Employee, Course, ClassRoom, Account
 
+class Shape:
+    name = ''
+    no_of_side = ''
+
+    def area():
+        pass
+
+
+class Triangle(Shape):
+     def perimeter(self):
+         pass
+
+
+class Rectangle(Shape):
+    @staticmethod
+    def area(length, bradth):
+        return length * bradth
+
+
+class Square(Shape):
+    @staticmethod
+    def area(length):
+        return length**2
+
+
+t = Triangle()
+r = Rectangle()
+s = Square()
+print(t.area(10, 5))
+print(r.area(10, 5))
+print(s.area(10))
+
+# Animal
+# Dog
+# Cat
+# Crocodile
