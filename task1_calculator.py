@@ -104,12 +104,27 @@ print(calc.get_operator())
 
 
 class Account:
-    name = ''
-    ac_no = ''
-    type = ''
-    username = ''
-    password = ''
-    balance = ''
+    __name = ''
+    __ac_no = ''
+    __balance = ''
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_acc(self, ac):
+        self.__ac_no = ac
+
+    def set_balance(self, balance):
+        self.__balance = balance
+
+    def get_name(self):
+        return self.__name
+
+    def get_acc(self):
+        return self.__ac_no
+
+    def get_balance(self):
+        return self.__balance
 
     def __init__(self, n, ac, t, un, pw, bl):
         self.name = n

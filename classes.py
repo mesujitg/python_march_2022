@@ -1,3 +1,5 @@
+from math import pi
+
 class User:
     name = ''
     gender = ''
@@ -97,35 +99,87 @@ class Shape:
     name = ''
     no_of_side = ''
 
+    def __init__(self, name, sides):
+        self.name = name
+        self.no_of_side = sides
+
+    def show_info(self):
+        return f'Shape: {self.name} \n No. of Sides: {self.no_of_side}'
+
+    def perimeter(self, length):
+        return self.no_of_side * length
+
     def area():
         pass
 
 
 class Triangle(Shape):
-     def perimeter(self):
-         pass
+    height = ''
+    base = ''
+
+    def __init__(self, name, sides, height, base):
+        super().__init__(name, sides)
+        self.height = height
+        self.base = base
+
+    def perimeter(self, a, b, c):
+        return (a + b + c)
+
+    def area(self):
+        return ((self.base*self.height)/2)
 
 
 class Rectangle(Shape):
-    @staticmethod
-    def area(length, bradth):
-        return length * bradth
+    length = ''
+    breadth = ''
+
+    def __init__(self, name, sides, length, breadth):
+        super().__init__(name, sides)
+        self.length = length
+        self.breadth = breadth
+
+    def perimeter(self):
+        return (2*(self.length + self.breadth))
+
+    def area(self):
+        return self.length * self.breadth
 
 
 class Square(Shape):
-    @staticmethod
-    def area(length):
-        return length**2
+    length = ''
+
+    def __init__(self, name, sides, length):
+        super().__init__(name, sides)
+        self.length = length
+
+    def area(self):
+        return self.length**2
+
+class Circle(Shape):
+    radius = ''
+
+    def __init__(self, name, sides, radius):
+        super().__init__(name, sides)
+        self.radius = radius
+
+    def perimeter(self):
+        return (2 * pi * self.radius)
+
+    def area(self):
+        return (pi*(self.radius**2))
 
 
-t = Triangle()
-r = Rectangle()
-s = Square()
-print(t.area(10, 5))
-print(r.area(10, 5))
-print(s.area(10))
+t = Triangle('Triangle', 3, 10, 5)
+r = Rectangle('Rectange', 4, 10, 5.55)
+s = Square('Square', 4, 10)
+c = Circle('Circle', 0, 14.55)
 
-# Animal
-# Dog
-# Cat
-# Crocodile
+# print(t.area())
+# print(r.area())
+# print(r.area())
+# print(s.area())
+# print(c.area())
+
+print(t.perimeter(10, 5, 7))
+print(s.perimeter(10))
+
