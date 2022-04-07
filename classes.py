@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from math import pi
 
 class User:
@@ -94,6 +95,7 @@ class Course:
 
 
 # Institute, Employee, Course, ClassRoom, Account
+from abc import ABC
 
 class Shape:
     name = ''
@@ -109,7 +111,12 @@ class Shape:
     def perimeter(self, length):
         return self.no_of_side * length
 
-    def area():
+    # @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def volume(self):
         pass
 
 
@@ -125,8 +132,8 @@ class Triangle(Shape):
     def perimeter(self, a, b, c):
         return (a + b + c)
 
-    def area(self):
-        return ((self.base*self.height)/2)
+    # def area(self):
+    #     return ((self.base*self.height)/2)
 
 
 class Rectangle(Shape):
@@ -169,17 +176,17 @@ class Circle(Shape):
         return (pi*(self.radius**2))
 
 
-t = Triangle('Triangle', 3, 10, 5)
-r = Rectangle('Rectange', 4, 10, 5.55)
-s = Square('Square', 4, 10)
-c = Circle('Circle', 0, 14.55)
+# t = Triangle('Triangle', 3, 10, 5)
+# r = Rectangle('Rectange', 4, 10, 5.55)
+# s = Square('Square', 4, 10)
+# c = Circle('Circle', 0, 14.55)
 
-# print(t.area())
+# t.area()
 # print(r.area())
 # print(r.area())
 # print(s.area())
 # print(c.area())
 
-print(t.perimeter(10, 5, 7))
-print(s.perimeter(10))
+# print(t.perimeter(10, 5, 7))
+# print(s.perimeter(10))
 
