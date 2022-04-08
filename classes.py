@@ -97,7 +97,7 @@ class Course:
 # Institute, Employee, Course, ClassRoom, Account
 from abc import ABC
 
-class Shape:
+class Shape(ABC):
     name = ''
     no_of_side = ''
 
@@ -111,11 +111,10 @@ class Shape:
     def perimeter(self, length):
         return self.no_of_side * length
 
-    # @abstractmethod
+    @abstractmethod
     def area(self):
         pass
 
-    @abstractmethod
     def volume(self):
         pass
 
@@ -124,16 +123,20 @@ class Triangle(Shape):
     height = ''
     base = ''
 
-    def __init__(self, name, sides, height, base):
+    def __init__(self, name, sides):
         super().__init__(name, sides)
-        self.height = height
-        self.base = base
+    
+    def set_height(self, ht):
+        self.height =  ht
+
+    def set_base(self, b):
+        self.base =  b
 
     def perimeter(self, a, b, c):
         return (a + b + c)
 
-    # def area(self):
-    #     return ((self.base*self.height)/2)
+    def area(self):
+        return ((self.base*self.height)/2)
 
 
 class Rectangle(Shape):
