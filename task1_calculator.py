@@ -27,17 +27,17 @@ Result: 200
     
 
 
-# def calculate(num1, num2, op):
-#     if op == '1':
-#         return num1+num2
-#     elif op == '2':
-#         return num1-num2
-#     elif op == '3':
-#         return num1*num2
-#     elif op == '4':
-#         return num1/num2
-#     else:
-#         return 0
+def calculate(num1, num2, op):
+    if op == '1':
+        return num1+num2
+    elif op == '2':
+        return num1-num2
+    elif op == '3':
+        return num1*num2
+    elif op == '4':
+        return num1/num2
+    else:
+        return 0
     
     
 
@@ -45,6 +45,32 @@ Result: 200
 # op = input('Choose: 1.+ 2.- 3.x 4./ : ')
 # num2 = float(input('Enter second number: '))
 # print(calculate(num1, num2, op))
+
+
+def calculate_np():
+    try:
+        num1 = float(input('Enter first number: '))
+        op = input('Choose: 1.+ 2.- 3.x 4./ : ')
+        num2 = float(input('Enter second number: '))
+        result = 0
+        if op == '1':
+            result =  num1+num2
+        elif op == '2':
+            result = num1-num2
+        elif op == '3':
+            result = num1*num2
+        elif op == '4':
+            result = num1/num2
+        else:
+            result = 0
+        print(result)
+    except Exception as e:
+        print(e, ': Enter Numeric value')
+    finally:
+        calculate_np()
+
+calculate_np()
+
 
 
 class Calculator:
@@ -93,14 +119,14 @@ class Calculator:
 
 
 
-num1 = input('Enter first number: ')
-op = input('Chose + or - or * or /: ')
-num2 = input('Enter second number: ')
+# num1 = input('Enter first number: ')
+# op = input('Chose + or - or * or /: ')
+# num2 = input('Enter second number: ')
 
-calc = Calculator(op, num1, num2, '+')
+# calc = Calculator(op, num1, num2, '+')
 # calc.set_values(op, num1, num2)
 # print(calc.__first_num, calc.__operator, calc.__second_num)
-print(calc.get_operator())
+# print(calc.get_operator())
 
 
 class Account:

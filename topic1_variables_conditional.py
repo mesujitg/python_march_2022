@@ -34,9 +34,15 @@ else:
 """
 
 # a program to check whether a user given number is odd or even.
-num = int(input('Enter a number: '))
+try:
+    num = int(input('Enter a number: '))
+    if num%2 == 0:
+        print('Even')
+    else:
+        print('Odd')
+except Exception as e:
+    print(e, ': Please enter numeric value') 
+finally:
+    print('ok')
 
-if num%2 == 0:
-    print('Even')
-else:
-    print('Odd')
+    

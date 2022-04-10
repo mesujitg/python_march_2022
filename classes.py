@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from math import pi
+from math import pi, sqrt
 
 class User:
     name = ''
@@ -138,6 +138,34 @@ class Triangle(Shape):
     def area(self):
         return ((self.base*self.height)/2)
 
+    @staticmethod
+    def area_by_sides(a, b, c):
+        s = a+b+c
+        return sqrt(s*(s-a)*(s-b)*(s-c))
+
+    @classmethod
+    def triangle_by_name(cls, name, side):
+        return cls(name, side)
+
+
+o1 = Triangle.triangle_by_name('Equilateral Triangle', 3)
+o2 = Triangle.triangle_by_name('Isosceles Triangle', 3)
+o3 = Triangle.triangle_by_name('Right angled Triangle', 3)
+triangles = [o1, o2, o3]
+triangles1 = [
+    {'name': 'Equilateral Triangle', 'no_of_side': 3}, 
+    {'name': 'Isosceles Triangle', 'no_of_side': 3}, 
+    {'name': 'Right angled Triangle', 'no_of_side': 3}, 
+]
+
+print(triangles[0].show_info())
+print(o2.name)
+print(o3.name)
+
+# t = Triangle('Triangle', 3)
+# print(t.area_by_sides(10, 5, 6))
+
+
 
 class Rectangle(Shape):
     length = ''
@@ -176,13 +204,21 @@ class Circle(Shape):
         return (2 * pi * self.radius)
 
     def area(self):
-        return (pi*(self.radius**2))
+        try:
+            return (pi*(self.radius**2))
+        except Exception as e:
+            print(e)
+            return 0
 
 
 # t = Triangle('Triangle', 3, 10, 5)
 # r = Rectangle('Rectange', 4, 10, 5.55)
 # s = Square('Square', 4, 10)
-# c = Circle('Circle', 0, 14.55)
+try:
+    pass
+except:
+    pass
+c = Circle('Circle', 0, 14.55)
 
 # t.area()
 # print(r.area())
