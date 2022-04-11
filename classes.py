@@ -151,14 +151,15 @@ class Triangle(Shape):
 o1 = Triangle.triangle_by_name('Equilateral Triangle', 3)
 o2 = Triangle.triangle_by_name('Isosceles Triangle', 3)
 o3 = Triangle.triangle_by_name('Right angled Triangle', 3)
-triangles = [o1, o2, o3]
-triangles1 = [
-    {'name': 'Equilateral Triangle', 'no_of_side': 3}, 
-    {'name': 'Isosceles Triangle', 'no_of_side': 3}, 
-    {'name': 'Right angled Triangle', 'no_of_side': 3}, 
-]
+# triangles = [o1, o2, o3]
+# triangles1 = [
+#     {'name': 'Equilateral Triangle', 'no_of_side': 3}, 
+#     {'name': 'Isosceles Triangle', 'no_of_side': 3}, 
+#     {'name': 'Right angled Triangle', 'no_of_side': 3}, 
+# ]
+# print(triangles[0].show_info())
 
-print(triangles[0].show_info())
+print(o1.name)
 print(o2.name)
 print(o3.name)
 
