@@ -1,9 +1,7 @@
 # import tkinter as tk
 from cgitb import text
 from msilib.schema import RadioButton
-from tkinter import BOTTOM, LEFT, RIGHT, TOP, Button, Entry, Frame, StringVar, ttk, Tk, Label, Text
-from tkinter.tix import COLUMN, ROW
-from typing_extensions import IntVar
+from tkinter import BOTTOM, LEFT, RIGHT, TOP, Button, Entry, Frame, StringVar, IntVar, ttk, Tk, Label, Text
 
 '''
 label, textbox, multiline textbox, button, radio, dropdown, checkbox
