@@ -15,7 +15,7 @@ users = [
         ]
 
 root = Tk()
-root.geometry('500x500')
+root.geometry('250x200')
 root.title('User Login')
 root.resizable(False, False)
 
@@ -24,16 +24,19 @@ amount = IntVar()
 balance = 0
 
 def on_login_click():
+    global balance
     un = entry_un.get()
     pw = entry_pw.get()
-    # print(un.get(), pw.get())
     for i in users:
         if un == i['username']:
             if pw == i['password']:
+                root.destroy()
                 root_db = Tk()
-                root_db.geometry('500x500')
+                # root_db.geometry('500x500')
                 root_db.title('User Login')
                 root_db.resizable(False, False)
+
+                balance = i["name"]
 
                 label_info = Label(root_db, text=f'Welcome: {i["name"]}! Yor balance is: {i["balance"]}')
                 label_info.grid(row=0, column=0, columnspan=2)
@@ -82,13 +85,13 @@ def on_proceed_click():
 label_un = Label(root, text='Username', padx=10, pady=10)
 label_un.grid(row=0, column=0)
 
-entry_un = Entry(root, textvariable=un)
+entry_un = Entry(root)
 entry_un.grid(row=0, column=1)
 
 label_pw = Label(root, text='Password', padx=10, pady=10)
 label_pw.grid(row=1, column=0)
 
-entry_pw = Entry(root, show='*', textvariable=pw)
+entry_pw = Entry(root, show='*')
 entry_pw.grid(row=1, column=1)
 
 btn_login = Button(root, text='Login', padx=10, pady=10, height=1, 
