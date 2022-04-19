@@ -1,0 +1,4 @@
+python file handling
+reading
+write
+append

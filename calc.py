@@ -14,6 +14,9 @@ def on_btn_click(val):
     if val == 'c':
         display.delete(0, END)
 
+    elif val == 'back':
+        display.delete(len(display.get())-1, END)
+
     elif val == '+' or val == '-' or val == '*' or val == '/':
         op = val
         num1 = float(display.get())
