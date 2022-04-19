@@ -1,6 +1,13 @@
 import csv
 
+# file = open('subjects.csv', 'w')
+# cw = csv.writer(file)
+# cw.writerow(["10","Test","Test","Test","5"])
+
 file = open('subjects.csv', 'r')
+cr = csv.reader(file)
+# print(cr.line_num)
+
 
 
 # file = open('my_file.txt', 'r')
